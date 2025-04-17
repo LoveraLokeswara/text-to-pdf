@@ -68,7 +68,7 @@ def text_to_pdf(text, max_width=170*mm):
     buffer.seek(0)  # Move to the beginning of the buffer
     return buffer   # Return the buffer containing the PDF
 
-@app.post("/convert")
+@app.post("/api/py/convert")
 async def convert_text_to_pdf(request: TextRequest):
     """
     Endpoint to convert text to PDF
