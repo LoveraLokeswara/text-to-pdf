@@ -74,7 +74,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
+The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
 
 ## Learn More
 
@@ -85,3 +85,66 @@ To learn more about Next.js, take a look at the following resources:
 - [FastAPI Documentation](https://fastapi.tiangolo.com/) - learn about FastAPI features and API.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+# Text to PDF Converter API
+
+A simple API service that converts text to PDF using FastAPI and ReportLab.
+
+## Features
+
+- Convert plain text to formatted PDF
+- Automatic text wrapping to fit page width
+- Clean API interface using FastAPI
+
+## Setup
+
+1. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Run the API:
+   ```
+   uvicorn api.index:app --reload
+   ```
+
+## API Usage
+
+### Convert Text to PDF
+
+**Endpoint:** `POST /convert`
+
+**Request Body:**
+```json
+{
+  "text": "Your text to convert to PDF here. This can be multiple lines.\nThis will be a new line in the PDF."
+}
+```
+
+**Response:**
+- Content-Type: `application/pdf`
+- A downloadable PDF file containing the formatted text
+
+### Hello World
+
+**Endpoint:** `GET /api/py/hello`
+
+**Response:**
+```json
+{
+  "message": "Hello from FastAPI"
+}
+```
+
+## API Documentation
+
+FastAPI automatically generates interactive API documentation.
+
+- Swagger UI: [http://localhost:8000/api/py/docs](http://localhost:8000/api/py/docs)
+- ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
